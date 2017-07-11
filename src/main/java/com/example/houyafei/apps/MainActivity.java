@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
                     bundle.putString("msg","你好，我来自美丽的星星，yeah！");
                 message.setData(bundle);
 
+            //8888888888888888888，未接收数据而修改信息回应的信使
             message.replyTo = receiverMessenger ;
-
+            //8888888888888888888
             try {
                 messenger.send(message);
             } catch (RemoteException e) {
