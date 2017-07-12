@@ -29,7 +29,7 @@ public Messenger  *replyTo* | Optional Messenger where replies to this message c
 
 * Message的方法
 
-------------|---------
+ |------------|---------|
 Bundle getData() | Obtains a Bundle of arbitrary data associated with this event, lazily creating it if necessary. 获取Message中的数据
 Handler getTarget() | Retrieve the a Handler implementation that will receive this message.获得接收该Message的Handler对象
 static Message obtain(Handler h, int what, Object obj) | Same as obtain(), but sets the values of the target, what, and obj members.
