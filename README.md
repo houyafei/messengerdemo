@@ -8,16 +8,19 @@ Messenger(Handler target) | Create a new Messenger pointing to the given Handler
 Messenger(IBinder target) |Create a Messenger from a raw IBinder, which had previously been retrieved with getBinder().通过IBinder创建Messenger对象，该IBinder是从Messenger对象中getBinder（）方法中恢复而来。
 
 * Messenger常用的方法
+
 ------------|------------------
 IBinder getBinder() | Retrieve the IBinder that this Messenger is using to communicate with its associated Handler.
 恢复IBinder，用来和与其关联的Handler通信
 void send(Message message) | Send a Message to this Messenger's Handler.发送信息到和Messenger相关的Handler（也就是信息处理方式）。
 
-* Message构造方法：
+* Message构造方法
+
 -----------------|------------------
 Message()   |  Constructor (but the preferred way to get a Message is to call Message.obtain()).一般通过该静态方法实现Message的实例化。
 
 * Message的属性
+
 ------------|--------------
 public int	*arg1*  | arg1 and arg2 are lower-cost alternatives to using setData() if you only need to store a few integer values. 可以代替setData（）方法存储简单的整形数据。
 public int	*arg2*   | arg1 and arg2 are lower-cost alternatives to using setData() if you only need to store a few integer values.
@@ -25,6 +28,7 @@ public Object   obj | An arbitrary object to send to the recipient. 一个被发
 public Messenger  *replyTo* | Optional Messenger where replies to this message can be sent. 发送Message的Messenger，也就是获取message的载体。
 
 * Message的方法
+
 ------------|---------
 Bundle getData() | Obtains a Bundle of arbitrary data associated with this event, lazily creating it if necessary. 获取Message中的数据
 Handler getTarget() | Retrieve the a Handler implementation that will receive this message.获得接收该Message的Handler对象
