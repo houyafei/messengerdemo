@@ -4,14 +4,14 @@ Messenger作为信使，它在不同进程中传递Message对象，从而实现�
 Messenger实现了Parcelable接口，从而可以被序列化传递。
 * Messenger构造方法：
 
-|name        |: description |
-|------------|:--------------|
+|name        | description |
+|------------|--------------|
 |Messenger(Handler target) | Create a new Messenger pointing to the given Handler.创建一个指向给定Handler（信息处理方式）的Messenger（对象）|
 |Messenger(IBinder target) |Create a Messenger from a raw IBinder, which had previously been retrieved with getBinder().通过IBinder创建Messenger对象，该IBinder是从Messenger对象中getBinder（）方法中恢复而来。|
 
 * Messenger常用的方法
 
-|name        |: description |
+|name        |description |
 |------------|:--------------|
 IBinder getBinder() | Retrieve the IBinder that this Messenger is using to communicate with its associated Handler.
 恢复IBinder，用来和与其关联的Handler通信
@@ -19,7 +19,7 @@ void send(Message message) | Send a Message to this Messenger's Handler.发送�
 
 * Message构造方法
 
-|name        |: description |
+|name        | description |
 |------------|:--------------|
 Message()   |  Constructor (but the preferred way to get a Message is to call Message.obtain()).一般通过该静态方法实现Message的实例化。
 
@@ -162,6 +162,7 @@ Service需要处理的事情：1）创建一个处理Message的Handler类（方�
 第二步，就是在MainActivity中接收信息。具体操作步骤如下：
 1）创建Handler的实例（可以是内部类），该类中接收消息；2）创建Messenger，通过new Messenger(Handler)的方式创建该类；3）在Connection中的方法中将Message的replyTo属性值设为新创建的Messenger。
 代码如下：
+
     /**
     * 1：class
     * 信息处理的Handler的子类
