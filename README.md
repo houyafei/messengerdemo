@@ -28,13 +28,13 @@ public Object   obj | An arbitrary object to send to the recipient. 一个被发
 public Messenger  *replyTo* | Optional Messenger where replies to this message can be sent. 发送Message的Messenger，也就是获取message的载体。
 
 * Message的方法
-
- | ------------ |:---------
+| name          |: description|
+ | ------------ |:--------- |
 | Bundle getData() | Obtains a Bundle of arbitrary data associated with this event, lazily creating it if necessary. 获取Message中的数据|
-| Handler getTarget() | Retrieve the a Handler implementation that will receive this message.获得接收该Message的Handler对象
-| static Message obtain(Handler h, int what, Object obj) | Same as obtain(), but sets the values of the target, what, and obj members.
-| static Message obtain() |  Return a new Message instance from the global pool. 从全局线程中获取一个Message的实例
-| void setData(Bundle data) | Sets a Bundle of arbitrary data values.设置一组数据
+| Handler getTarget() | Retrieve the a Handler implementation that will receive this message.获得接收该Message的Handler对象|
+| static Message obtain(Handler h, int what, Object obj) | Same as obtain(), but sets the values of the target, what, and obj members.|
+| static Message obtain() |  Return a new Message instance from the global pool. 从全局线程中获取一个Message的实例|
+| void setData(Bundle data) | Sets a Bundle of arbitrary data values.设置一组数据|
 
 以上是线程通信过程中需要使用一些基本方法和类。下面把Service当做服务端，MainActivity当做客户端进行实例分析。
 
